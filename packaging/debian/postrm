@@ -1,0 +1,35 @@
+#!/bin/bash
+# postrm script for jing-uninstall
+
+set -e
+
+case "$1" in
+    remove)
+        # 删除符号链接
+        rm -f /usr/local/bin/jing-uninstall
+        
+        # 更新桌面数据库
+        if command -v update-desktop-database >/dev/null 2>&1; then
+            update-desktop-database /usr/share/applications 2>/dev/null || true
+        fi
+        
+        echo "✓ JingUninstall 已卸载"
+        ;;
+    
+    purge)
+        # 删除符号链接
+        rm -f /usr/local/bin/jing-uninstall
+        
+        # 可选：删除用户配置（需要用户确认）
+        # rm -rf ~/.config/jing-uninstall/
+        
+        # 更新桌面数据库
+        if command -v update-desktop-database >/dev/null 2>&1; then
+            update-desktop-database /usr/share/applications 2>/dev/null || true
+        fi
+        
+        echo "✓ JingUninstall 已完全清除"
+        ;;
+esac
+
+exit 0

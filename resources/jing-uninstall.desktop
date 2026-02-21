@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=JingUninstall
+Name[zh_CN]=净卸
+Comment=Professional software uninstaller for Linux
+Comment[zh_CN]=专业的 Linux 软件卸载工具
+Exec=/opt/jing-uninstall/jing-uninstall
+Icon=jing-uninstall
+Terminal=false
+Type=Application
+Categories=System;Utility;Settings;
+Keywords=uninstall;remove;cleanup;software;package;
+Keywords[zh_CN]=卸载;删除;清理;软件;包;
+StartupNotify=true
+StartupWMClass=jing-uninstall

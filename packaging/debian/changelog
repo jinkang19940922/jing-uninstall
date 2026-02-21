@@ -1,0 +1,9 @@
+jing-uninstall (1.0.0) unstable; urgency=medium
+
+  * Initial release
+  * Support for APT, Snap, Flatpak, AppImage
+  * Residue scanning and cleaning
+  * Force uninstall capability
+  * Beautiful GUI interface
+
+ -- JingUninstall Team <jing-uninstall@example.com>  Thu, 19 Feb 2025 00:00:00 +0800

@@ -1,0 +1,21 @@
+Source: jing-uninstall
+Section: utils
+Priority: optional
+Maintainer: JingUninstall Team <jing-uninstall@example.com>
+Build-Depends: debhelper (>= 13)
+Standards-Version: 4.6.0
+
+Package: jing-uninstall
+Architecture: all
+Depends: python3, python3-pyqt6, python3-apt, pkexec
+Recommends: snapd, flatpak
+Description: Professional software uninstaller for Linux
+ JingUninstall is a powerful uninstaller tool for Linux systems,
+ inspired by Windows Geek Uninstaller.
+ .
+ Features:
+  - Support for APT, Snap, Flatpak, and AppImage packages
+  - Thorough residue scanning and cleaning
+  - Force uninstall capability
+  - Batch operations support
+  - Beautiful and intuitive GUI

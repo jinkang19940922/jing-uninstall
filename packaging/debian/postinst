@@ -1,0 +1,27 @@
+#!/bin/bash
+# postinst script for jing-uninstall
+
+set -e
+
+case "$1" in
+    configure)
+        # 创建符号链接
+        ln -sf /opt/jing-uninstall/jing-uninstall /usr/local/bin/jing-uninstall 2>/dev/null || true
+        
+        # 更新桌面数据库
+        if command -v update-desktop-database >/dev/null 2>&1; then
+            update-desktop-database /usr/share/applications 2>/dev/null || true
+        fi
+        
+        # 更新图标缓存
+        if command -v gtk-update-icon-cache >/dev/null 2>&1; then
+            gtk-update-icon-cache -f /usr/share/icons/hicolor 2>/dev/null || true
+        fi
+        
+        echo "✓ JingUninstall 安装完成！"
+        echo "  您可以在应用程序菜单中找到 '净卸 JingUninstall'"
+        echo "  或者运行 'jing-uninstall' 命令启动"
+        ;;
+esac
+
+exit 0

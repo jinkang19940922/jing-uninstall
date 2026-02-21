@@ -1,0 +1,11 @@
+#!/bin/bash
+# JingUninstall 启动脚本
+
+# 程序安装目录
+INSTALL_DIR="/opt/jing-uninstall"
+
+# 设置 Python 路径
+export PYTHONPATH="${INSTALL_DIR}:${PYTHONPATH}"
+
+# 启动应用
+exec python3 "${INSTALL_DIR}/main.py" "$@"

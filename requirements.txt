@@ -1,0 +1,9 @@
+# JingUninstall 依赖
+# JingUninstall Dependencies
+
+# GUI 框架
+PyQt6>=6.4.0
+
+# 系统包管理（通常系统已预装）
+# python-apt 需要通过系统包管理器安装：
+# sudo apt install python3-apt

@@ -1,0 +1,39 @@
+# 残留扫描路径配置
+# Residue Scan Paths Configuration
+
+# 系统级配置目录
+system_config:
+  - /etc
+
+# 系统级日志目录
+system_log:
+  - /var/log
+
+# 系统级数据目录
+system_data:
+  - /var/lib
+  - /opt
+
+# 用户配置目录
+user_config:
+  - ~/.config
+
+# 用户缓存目录
+user_cache:
+  - ~/.cache
+
+# 用户数据目录
+user_data:
+  - ~/.local/share
+  - ~/.local/state
+
+# 本地安装目录
+usr_local:
+  - /usr/local/bin
+  - /usr/local/lib
+  - /usr/local/share
+
+# 其他需要扫描的目录
+extra_paths:
+  - /tmp
+  - /var/tmp

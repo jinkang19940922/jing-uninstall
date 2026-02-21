@@ -1,0 +1,80 @@
+# 系统保护包白名单
+# 这些包不建议卸载，可能导致系统不稳定
+
+# 核心系统包
+critical_packages:
+  - ubuntu-desktop
+  - ubuntu-minimal
+  - ubuntu-standard
+  - ubuntu-desktop-minimal
+  - ubuntu-desktop-recommended
+  - base-files
+  - base-passwd
+  - bash
+  - coreutils
+  - dpkg
+  - apt
+  - apt-utils
+  - libc6
+  - libc-bin
+  - libstdc++6
+  - systemd
+  - systemd-sysv
+  - dbus
+  - dbus-user-session
+  - login
+  - passwd
+  - sudo
+  - python3
+  - python3-minimal
+  - python3-pip
+  - grub-common
+  - grub-pc
+  - grub2-common
+  - linux-base
+  - init
+  - sysvinit-utils
+
+# 桌面环境包
+desktop_packages:
+  - gnome-core
+  - gnome-shell
+  - gnome-session
+  - gnome-settings-daemon
+  - gnome-control-center
+  - mutter
+  - nautilus
+  - gnome-terminal
+  - gsettings-desktop-schemas
+  - ubuntu-session
+  - ubuntu-desktop-gnome
+
+# 网络相关
+network_packages:
+  - network-manager
+  - network-manager-gnome
+  - dnsmasq-base
+  - iptables
+  - netplan.io
+
+# 显示相关
+display_packages:
+  - xorg
+  - xserver-xorg-core
+  - xserver-xorg-video-all
+  - xserver-xorg-input-all
+  - mesa-utils
+  - libgl1-mesa-glx
+
+# 声音相关
+audio_packages:
+  - pulseaudio
+  - pulseaudio-utils
+  - alsa-base
+  - alsa-utils
+
+# 字体包
+font_packages:
+  - fonts-ubuntu
+  - fontconfig
+  - fontconfig-config

@@ -1,0 +1,40 @@
+#!/usr/bin/make -f
+# JingUninstall debian/rules file
+
+export SOURCE_ROOT = $(CURDIR)/..
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	# 创建安装目录
+	install -d $(CURDIR)/debian/jing-uninstall/opt/jing-uninstall
+	install -d $(CURDIR)/debian/jing-uninstall/usr/share/applications
+	install -d $(CURDIR)/debian/jing-uninstall/usr/share/icons/hicolor/scalable/apps
+	
+	# 复制项目文件（从父目录的源代码树）
+	cp -r $(SOURCE_ROOT)/core $(CURDIR)/debian/jing-uninstall/opt/jing-uninstall/
+	cp -r $(SOURCE_ROOT)/ui $(CURDIR)/debian/jing-uninstall/opt/jing-uninstall/
+	cp -r $(SOURCE_ROOT)/backends $(CURDIR)/debian/jing-uninstall/opt/jing-uninstall/
+	cp -r $(SOURCE_ROOT)/utils $(CURDIR)/debian/jing-uninstall/opt/jing-uninstall/
+	cp -r $(SOURCE_ROOT)/config $(CURDIR)/debian/jing-uninstall/opt/jing-uninstall/
+	cp -r $(SOURCE_ROOT)/resources $(CURDIR)/debian/jing-uninstall/opt/jing-uninstall/
+	cp $(SOURCE_ROOT)/main.py $(CURDIR)/debian/jing-uninstall/opt/jing-uninstall/
+	
+	# 安装启动脚本
+	install -D -m 755 $(SOURCE_ROOT)/resources/jing-uninstall \
+		$(CURDIR)/debian/jing-uninstall/opt/jing-uninstall/jing-uninstall
+	
+	# 安装桌面文件
+	install -D -m 644 $(SOURCE_ROOT)/resources/jing-uninstall.desktop \
+		$(CURDIR)/debian/jing-uninstall/usr/share/applications/jing-uninstall.desktop
+	
+	# 安装图标
+	install -D -m 644 $(SOURCE_ROOT)/resources/jing-uninstall.svg \
+		$(CURDIR)/debian/jing-uninstall/usr/share/icons/hicolor/scalable/apps/jing-uninstall.svg
+
+override_dh_auto_test:
+	# 不运行测试
+
+override_dh_strip_nondeterminism:
+	# 跳过
